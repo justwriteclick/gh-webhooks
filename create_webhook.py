@@ -31,22 +31,26 @@ def post_create_webhook(gh_orgname, repo_name, gh_username, gh_api_key, gh_secre
     print("API Key: {}".format(gh_api_key))
     session = requests.Session()
     session.auth = (gh_username, gh_api_key)
-    # Request body for the POST to create a webhook
-    payload = {
-           "name": "web",
-           "active": true,
-           "events": ["release"],
-           "config": {
-                      "url": "https://devnet-int-svcs.cisco.com/api/githubs/githubWebhook/release",
-                      "content_type": "json",
-                      "secret": gh_secret,
-                      "insecure_ssl": "0"
-                      }
-           }
-    print(payload)
+
 
     try:
-        hooks = session.post(api_uri, data=json.dumps(payload))
+        hooks = Request('POST', api_uri, data=data)
+        prepped = hooks.prepare()
+        # Request body for the POST to create a webhook
+        payload = {
+               "name": "web",
+               "active": true,
+               "events": ["release"],
+               "config": {
+                          "url": "https://devnet-int-svcs.cisco.com/api/githubs/githubWebhook/release",
+                          "content_type": "json",
+                          "secret": gh_secret,
+                          "insecure_ssl": "0"
+                          }
+               }
+        prepped.body = json.dumps(payload)
+        resp = session.send(prepped)
+        print(payload)
         print(hooks.status_code)
         print(hooks.text)
         print(json.dumps(hooks.json(), indent=4))
