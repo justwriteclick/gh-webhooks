@@ -33,11 +33,11 @@ def post_create_webhook(gh_orgname, repo_name, gh_username, gh_api_key, gh_secre
     session.auth = (gh_username, gh_api_key)
     # Request body for the POST to create a webhook
     payload = {
-           "name":"web",
-           "active":"true",
+           "name": "web",
+           "active": true,
            "events": ["release"],
            "config": {
-                      "url":"https://devnet-int-svcs.cisco.com/api/githubs/githubWebhook/release",
+                      "url": "https://devnet-int-svcs.cisco.com/api/githubs/githubWebhook/release",
                       "content_type": "json",
                       "secret": gh_secret,
                       "insecure_ssl": "0"
@@ -46,7 +46,7 @@ def post_create_webhook(gh_orgname, repo_name, gh_username, gh_api_key, gh_secre
     print(payload)
 
     try:
-        hooks = session.post(api_uri, params=payload)
+        hooks = session.post(api_uri, data=json.dumps(payload))
         print(hooks.status_code)
         print(hooks.text)
         print(json.dumps(hooks.json(), indent=4))
@@ -66,7 +66,7 @@ def main(args):
         repolist = f.readlines()
         for repo in repolist:
             repo_name = repo.rstrip('\n')
-            response = get_webhook(configvar.gh_orgname, repo_name, configvar.gh_username, configvar.gh_api_key, configvar.gh_secret)
-            # response = post_create_webhook(configvar.gh_orgname, repo, configvar.gh_username, configvar.gh_api_key, configvar.gh_secret)
+            #response = get_webhook(configvar.gh_orgname, repo_name, configvar.gh_username, configvar.gh_api_key, configvar.gh_secret)
+            response = post_create_webhook(configvar.gh_orgname, repo_name, configvar.gh_username, configvar.gh_api_key, configvar.gh_secret)
 if __name__ == "__main__":
     sys.exit(main(sys.argv[1:]))
