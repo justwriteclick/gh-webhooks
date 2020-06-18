@@ -33,8 +33,8 @@ def post_create_webhook(gh_orgname, repo_name, gh_username, gh_api_key, gh_secre
     try:
         print("In the try block")
 
-        headers = {'User-Agent': 'annegentle',
-                   'content-type': 'application/json',
+        headers = {'User-Agent': '{}'.format(gh_username),
+                   'Content-Type': 'application/json',
                    'Authorization': 'token {}'.format(gh_api_key)
         }
         print(headers)
