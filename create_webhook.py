@@ -2,7 +2,7 @@
 
 import configvar
 import sys
-import requests
+from requests import Request, Session
 import json
 """
 Creates webhooks in a repo upon release using
@@ -29,34 +29,36 @@ def post_create_webhook(gh_orgname, repo_name, gh_username, gh_api_key, gh_secre
     print("API endpoint: {}".format(api_uri))
     print("Username: {}".format(gh_username))
     print("API Key: {}".format(gh_api_key))
-    session = requests.Session()
-    session.auth = (gh_username, gh_api_key)
-
+    print("Secret for payload: {}".format(gh_secret))
 
     try:
-        hooks = Request('POST', api_uri, data=data)
-        prepped = hooks.prepare()
-        # Request body for the POST to create a webhook
+        print("In the try block")
+        useragent = {'User-Agent': 'annegentle'}
         payload = {
-               "name": "web",
-               "active": true,
-               "events": ["release"],
-               "config": {
-                          "url": "https://devnet-int-svcs.cisco.com/api/githubs/githubWebhook/release",
-                          "content_type": "json",
-                          "secret": gh_secret,
-                          "insecure_ssl": "0"
-                          }
+               'name': 'web',
+               'active': True,
+               'events': ['release'],
+               'config': {
+                           'url': 'https://devnet-int-svcs.cisco.com/api/githubs/githubWebhook/release',
+                           'content_type': 'json',
+                           'secret': gh_secret,
+                           'insecure_ssl': '0'
+                           }
                }
-        prepped.body = json.dumps(payload)
-        resp = session.send(prepped)
+        session = Session()
+        session.auth = (gh_username, gh_api_key)
+        makehooks = Request('POST', api_uri, data=payload, headers=useragent).prepare()
+        resp = session.send(makehooks)
         print(payload)
-        print(hooks.status_code)
-        print(hooks.text)
-        print(json.dumps(hooks.json(), indent=4))
+        print(resp.status_code)
+        print(resp.text)
+        print(json.dumps(resp.json(), indent=4))
+        #print(makehooks.status_code)
+        #print(makehooks.text)
+        #print(json.dumps(makehooks.json(), indent=4))
     except:
-        print(hooks.status_code)
-        print("Response text: {}".format(hooks.text))
+        print(makehooks.status_code)
+        print("Response text: {}".format(makehooks.text))
         sys.exit()
 
 def main(args):
@@ -71,6 +73,7 @@ def main(args):
         for repo in repolist:
             repo_name = repo.rstrip('\n')
             #response = get_webhook(configvar.gh_orgname, repo_name, configvar.gh_username, configvar.gh_api_key, configvar.gh_secret)
+            print("Working on this repo: " + repo_name)
             response = post_create_webhook(configvar.gh_orgname, repo_name, configvar.gh_username, configvar.gh_api_key, configvar.gh_secret)
 if __name__ == "__main__":
     sys.exit(main(sys.argv[1:]))
