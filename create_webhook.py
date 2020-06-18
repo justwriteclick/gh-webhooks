@@ -50,7 +50,7 @@ def post_create_webhook(gh_orgname, repo_name, gh_username, gh_api_key, gh_secre
                            }
                }
         session = Session()
-        makehooks = Request('POST', api_uri, data=payload, headers=headers).prepare()
+        makehooks = Request('POST', api_uri, json=payload, headers=headers).prepare()
         resp = session.send(makehooks)
         #print(json.dumps(payload, indent=4))
         print(resp.status_code)
