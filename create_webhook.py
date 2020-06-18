@@ -45,23 +45,23 @@ def post_create_webhook(gh_orgname, repo_name, gh_username, gh_api_key, gh_secre
                'config': {
                            'url': 'https://devnet-int-svcs.cisco.com/api/githubs/githubWebhook/release',
                            'content_type': 'json',
-                           'secret': gh_secret,
+                           'secret': '{}'.format(gh_secret),
                            'insecure_ssl': '0'
                            }
                }
         session = Session()
         makehooks = Request('POST', api_uri, data=payload, headers=headers).prepare()
         resp = session.send(makehooks)
-        print(json.dumps(payload, indent=4))
+        #print(json.dumps(payload, indent=4))
         print(resp.status_code)
-        print(resp.text)
+        #print(resp.text)
         print(json.dumps(resp.json(), indent=4))
         #print(makehooks.status_code)
         #print(makehooks.text)
         #print(json.dumps(makehooks.json(), indent=4))
     except:
-        print(makehooks.status_code)
-        print("Response text: {}".format(makehooks.text))
+        print(resp.status_code)
+        print("Response text: {}".format(resp.text))
         sys.exit()
 
 def main(args):
