@@ -1,5 +1,6 @@
 venv/
-.txt
-.json
+.DS_Store
+txt
+json
 config.py
 __pycache__
