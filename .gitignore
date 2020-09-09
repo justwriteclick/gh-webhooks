@@ -1,3 +1,5 @@
 venv/
-configvar.py
+.txt
+.json
+config.py
 __pycache__

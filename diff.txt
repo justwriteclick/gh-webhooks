@@ -1,0 +1,161 @@
+Production "Gits"				Staging "Gits"
+
+Cisco-SD-WAN-learning-labs		Cisco-SD-WAN-learning-labs
+CiscoCloudLock				CiscoCloudLock
+CiscoUmbrella				CiscoUmbrella
+DNAC-101-LL				DNAC-101-LL
+				      >	DevNet_Challenges
+DevSecCon				DevSecCon
+IOx-Learning-Labs			IOx-Learning-Labs
+IOx_DevOps_Track			IOx_DevOps_Track
+Infinite-Toolkit---Learning-Labs	Infinite-Toolkit---Learning-Labs
+Merak_Alexa				Merak_Alexa
+NetScaler-ADC-and-MAS-Integration-wit	NetScaler-ADC-and-MAS-Integration-wit
+Shipped-Learning-Labs		      <
+aci-k8s-labs				aci-k8s-labs
+aci-learning-labs			aci-learning-labs
+aci_ansible_learning_labs		aci_ansible_learning_labs
+aironet					aironet
+				      >	app-first-security
+app_hosting_learning_labs		app_hosting_learning_labs
+appd-learning-labs			appd-learning-labs
+c480-labs				c480-labs
+cat9k-app-hosting-labs			cat9k-app-hosting-labs
+centos-vm-on-ios-xe			centos-vm-on-ios-xe
+cisco-cloud-center-rest-api		cisco-cloud-center-rest-api
+cisco-connect-romania-2016		cisco-connect-romania-2016
+cisco-intersight-rest-api		cisco-intersight-rest-api
+cisco-meeting-server-learning-labs	cisco-meeting-server-learning-labs
+clus-train-learning-labs		clus-train-learning-labs
+coding-japan				coding-japan
+coding-series-learning-labs		coding-series-learning-labs
+collab-jabber				collab-jabber
+collab-jg				collab-jg
+collab-rem				collab-rem
+collab-spark-auth-working		collab-spark-auth-working
+collab-spark-video-sdk			collab-spark-video-sdk
+collab-spark-zapier			collab-spark-zapier
+collab-sparkwebhook			collab-sparkwebhook
+collab-uds				collab-uds
+collab-webex				collab-webex
+collab-webex-meetings		      <
+containers-dne-labs		      <
+data-connect-learning-labs		data-connect-learning-labs
+data-dev-learning-labs			data-dev-learning-labs
+dciv2-verify-labs		      <
+design-in-learning-labs			design-in-learning-labs
+				      >	dev-setup-labs
+deviot-learning-labs			deviot-learning-labs
+devnet-alexa-skill			devnet-alexa-skill
+devnet-beginner				devnet-beginner
+devnet-express				devnet-express
+devnet-express-cloud-collab		devnet-express-cloud-collab
+				      >	devnet-express-cloud-collab
+devnet-express-cloud-collab-sd		devnet-express-cloud-collab-sd
+devnet-express-cloud-collab-softdevs	devnet-express-cloud-collab-softdevs
+devnet-express-dci-ansible		devnet-express-dci-ansible
+				      >	devnet-express-dci-ansible
+devnet-express-dci-intermediate-aci	devnet-express-dci-intermediate-aci
+devnet-express-dci-intro-aci		devnet-express-dci-intro-aci
+devnet-express-dci-nxos			devnet-express-dci-nxos
+devnet-express-dci-prep			devnet-express-dci-prep
+devnet-express-dna-japan		devnet-express-dna-japan
+devnet-guidelines			devnet-guidelines
+devnet-introduction-to-powershell	devnet-introduction-to-powershell
+devnet-rustycoder-learninglabs		devnet-rustycoder-learninglabs
+				      >	devnet-writing-guidelines
+devops-learning-labs			devops-learning-labs
+dnac-learning-labs			dnac-learning-labs
+dnav3-intro-cmx-labs			dnav3-intro-cmx-labs
+dnav3-intro-dnac-labs			dnav3-intro-dnac-labs
+				      >	dnav3-intro-guestshell-labs
+				      >	dnav3-intro-mdp-labs
+				      >	dnav3-intro-nfvis-labs
+				      >	dnav3-verify-labs
+				      >	dnav3-verify-labs
+				      >	dne-collab-v2
+dne-dcip-intermediate-programming-cis	dne-dcip-intermediate-programming-cis
+dne-dcip-introduction-to-powershell-l	dne-dcip-introduction-to-powershell-l
+				      >	dne-dcip-introduction-to-powershell-l
+dne-dcip-programming-cisco-compute-la	dne-dcip-programming-cisco-compute-la
+dne-dcip-ucsd-infrastructure-automati	dne-dcip-ucsd-infrastructure-automati
+dne-dnac-intro				dne-dnac-intro
+				      >	dne-security-0day-missions-labs
+				      >	dne-security-amp-labs
+dne-security-firepower-mission-labs	dne-security-firepower-mission-labs
+				      >	dne-security-ftd-rest-api-labs
+				      >	dne-security-ise-labs
+				      >	dne-security-threatgrid-labs
+				      >	dne-security-umbrella-labs
+				      >	dne-security-verify
+fdm-rest-api				fdm-rest-api
+finesse-learning-labs			finesse-learning-labs
+fmc-rest-api				fmc-rest-api
+go-learninglabs				go-learninglabs
+hyperfaas			      <
+intro-ansible-iosxe-labs		intro-ansible-iosxe-labs
+intro-cmx-labs				intro-cmx-labs
+intro-dnac-labs				intro-dnac-labs
+intro-guestshell-labs			intro-guestshell-labs
+intro-mdp-labs				intro-mdp-labs
+intro-meraki-labs			intro-meraki-labs
+intro-nfvis-labs			intro-nfvis-labs
+				      >	intro-python-labs
+				      >	intro-rest-labs
+intro-standard-device-interfaces-lear	intro-standard-device-interfaces-lear
+intro-to-programming			intro-to-programming
+intro-to-programming-devnet-express	intro-to-programming-devnet-express
+iosxe_model_driven_telemetry		iosxe_model_driven_telemetry
+iosxr-programmability-devnet-labs	iosxr-programmability-devnet-labs
+				      >	iox-learning-labs
+jabber-botkit-lab			jabber-botkit-lab
+joy					joy
+				      >	k3s-learning-lab
+				      >	kinetic-gmm-api-using-devnet-sandbox
+kinetic-learning-labs			kinetic-learning-labs
+				      >	kubeflow-mnist-lab
+labs-cloud-collab			labs-cloud-collab
+labs-iot-alleantia			labs-iot-alleantia
+labs-iot-cybervision			labs-iot-cybervision
+labs-iot-eximprod		      <
+labs-iot-fnd			      <
+labs-xapi				labs-xapi
+learning-labs-aci-meraki		learning-labs-aci-meraki
+learning-labs-aci-meraki-api		learning-labs-aci-meraki-api
+learning-labs-content			learning-labs-content
+learning-labs-digital-ceiling		learning-labs-digital-ceiling
+learning-labs-howto			learning-labs-howto
+learning_lab_napalm			learning_lab_napalm
+learning_lab_vagrant_netprog		learning_lab_vagrant_netprog
+ll_net_cicd				ll_net_cicd
+meraki-automated-deployment-lab	      <
+meraki-learning-labs			meraki-learning-labs
+				      >	meraki-switch-challenge-lab
+ml3					ml3
+networking-series-learning-labs		networking-series-learning-labs
+nso-labs				nso-labs
+nxos-poap-learning-labs			nxos-poap-learning-labs
+nxos-yang-learning-labs			nxos-yang-learning-labs
+nxos_telemetry_learning_labs		nxos_telemetry_learning_labs
+pyats-labs			      <
+python-axl-learning-labs	      <
+sandbox-dci-ansible			sandbox-dci-ansible
+sandbox-dci-nxos			sandbox-dci-nxos
+sbx-intermediate-aci			sbx-intermediate-aci
+sbx-intro-aci				sbx-intro-aci
+scc-learning-labs			scc-learning-labs
+sd-wan-ansible-pipeline			sd-wan-ansible-pipeline
+sd-wan_integration_with_devops_tools	sd-wan_integration_with_devops_tools
+sdwan-ansible				sdwan-ansible
+spark-botkit-lab			spark-botkit-lab
+startnowchallengelab		      <
+telstra-dcloud-links			telstra-dcloud-links
+threat-response-learning-labs		threat-response-learning-labs
+threatGrid				threatGrid
+ucs-director-rest-api-learning-labs	ucs-director-rest-api-learning-labs
+ucs-imc-learning-labs			ucs-imc-learning-labs
+ucs-manager-powertool-learning-labs	ucs-manager-powertool-learning-labs
+ucs-manager-python-learning-labs	ucs-manager-python-learning-labs
+virl-learning-lab			virl-learning-lab
+vsom-learning-labs			vsom-learning-labs
+wifi6-learning-labs			wifi6-learning-labs
