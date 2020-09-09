@@ -1,35 +1,29 @@
 #!/usr/bin/env python
 
-import configvar
+import config
 import json
 import sys
 """
-Gets a list of all repos using a JSON file generated from
+Creates a list of all repos using a JSON file generated from
 the Learning Labs api/gits endpoint.
+Usage:
+python llapi_repos_names.py llgitsresponse.json > devnet_repos.txt
 """
 
 def get_repos(filename):
-
     with open(filename,'r') as json_file:
         ourjson = json.load(json_file)
-
     json_file.close()
     for index, value in enumerate(ourjson):
-        #print("Index is: " + str(index))
         orgname = str(value['user'])
         if orgname == "CiscoDevNet":
-            #print("org name is: " + str(value['user']))
             print(str(value['repo']))
         else:
             pass
-    #print(type(ourjson))
-    #for key in ourjson:
-    #    for value in key['repo']:
-    #        print(value)
 
 def main(args):
     if not len(args) == 1:
-        print("Enter the filename for the JSON file")
+        print("Enter the filename for the JSON file to read in")
         return
     filename = args[0]
     get_repos(filename)

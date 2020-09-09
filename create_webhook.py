@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import configvar
+import config
 import json
 from requests import Request, Session
 import sys
@@ -9,6 +9,8 @@ Creates webhooks in a repo upon release using
 GitHub API v3 POST /repos/:owner/:repo/hooks
 Requires a file with repo names, one per line,
 and a user token with access to each repo.
+Usage:
+python create_webhook.py devnet_repos.txt
 """
 
 def get_webhook(gh_orgname, repo_name, gh_username, gh_api_key, gh_secret):
@@ -31,8 +33,6 @@ def post_create_webhook(gh_orgname, repo_name, gh_username, gh_api_key, gh_secre
     print("Secret for payload: {}".format(gh_secret))
 
     try:
-        print("In the try block")
-
         headers = {'User-Agent': '{}'.format(gh_username),
                    'Content-Type': 'application/json',
                    'Authorization': 'token {}'.format(gh_api_key)
@@ -54,11 +54,7 @@ def post_create_webhook(gh_orgname, repo_name, gh_username, gh_api_key, gh_secre
         resp = session.send(makehooks)
         #print(json.dumps(payload, indent=4))
         print(resp.status_code)
-        #print(resp.text)
         print(json.dumps(resp.json(), indent=4))
-        #print(makehooks.status_code)
-        #print(makehooks.text)
-        #print(json.dumps(makehooks.json(), indent=4))
     except:
         print(resp.status_code)
         print("Response text: {}".format(resp.text))
@@ -76,7 +72,7 @@ def main(args):
         for repo in repolist:
             repo_name = repo.rstrip('\n')
             print("Working on this repo: " + repo_name)
-            #getresponse = get_webhook(configvar.gh_orgname, repo_name, configvar.gh_username, configvar.gh_api_key, configvar.gh_secret)
-            postresponse = post_create_webhook(configvar.gh_orgname, repo_name, configvar.gh_username, configvar.gh_api_key, configvar.gh_secret)
+            getresponse = get_webhook(config.gh_orgname, repo_name, config.gh_username, config.gh_api_key, config.gh_secret)
+            postresponse = post_create_webhook(config.gh_orgname, repo_name, config.gh_username, config.gh_api_key, config.gh_secret)
 if __name__ == "__main__":
     sys.exit(main(sys.argv[1:]))
