@@ -5,6 +5,7 @@ import json
 from requests import Request, Session
 import sys
 """
+Copyright (c) 2020, Cisco Systems, Inc. and/or its affiliates
 Creates webhooks in a repo upon release using
 GitHub API v3 POST /repos/:owner/:repo/hooks
 Requires a file with repo names, one per line,
