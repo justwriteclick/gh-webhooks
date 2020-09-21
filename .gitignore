@@ -5,3 +5,4 @@ txt
 json
 config.py
 __pycache__
+.vscode
