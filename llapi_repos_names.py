@@ -4,6 +4,7 @@ import config
 import json
 import sys
 """
+Copyright (c) 2020, Cisco Systems, Inc. and/or its affiliates
 Creates a list of all repos using a JSON file generated from
 the Learning Labs api/gits endpoint.
 Usage:
