@@ -2,8 +2,10 @@
 
 import config
 import json
+import requests
 from requests import Request, Session
 import sys
+
 """
 Copyright (c) 2020, Cisco Systems, Inc. and/or its affiliates
 Creates webhooks in a repo upon release using
@@ -26,7 +28,7 @@ def get_webhook(gh_orgname, repo_name, gh_username, gh_api_key, gh_secret):
         print(gethooks.status_code)
         print("Response text: {}".format(gethooks.text))
 
-def post_create_webhook(gh_orgname, repo_name, gh_username, gh_api_key, gh_secret):
+def post_create_webhook(gh_orgname, repo_name, gh_username, gh_api_key, gh_webhook_url, gh_secret):
     api_uri = "https://api.github.com/repos/{}/{}/hooks".format(gh_orgname, repo_name)
     print("API endpoint: {}".format(api_uri))
     print("Username: {}".format(gh_username))
@@ -44,7 +46,7 @@ def post_create_webhook(gh_orgname, repo_name, gh_username, gh_api_key, gh_secre
                'active': True,
                'events': ['release'],
                'config': {
-                           'url': 'https://devnet-int-svcs.cisco.com/api/githubs/githubWebhook/release',
+                           'url': '{}'.format(gh_webhook_url),
                            'content_type': 'json',
                            'secret': '{}'.format(gh_secret),
                            'insecure_ssl': '0'
@@ -74,6 +76,6 @@ def main(args):
             repo_name = repo.rstrip('\n')
             print("Working on this repo: " + repo_name)
             getresponse = get_webhook(config.gh_orgname, repo_name, config.gh_username, config.gh_api_key, config.gh_secret)
-            postresponse = post_create_webhook(config.gh_orgname, repo_name, config.gh_username, config.gh_api_key, config.gh_secret)
+            postresponse = post_create_webhook(config.gh_orgname, repo_name, config.gh_username, config.gh_api_key, config.gh_webhook_url, config.gh_secret)
 if __name__ == "__main__":
     sys.exit(main(sys.argv[1:]))
